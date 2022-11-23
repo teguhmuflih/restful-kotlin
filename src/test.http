@@ -1,0 +1,78 @@
+### create product 1
+
+POST http://localhost:8080/api/products
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : "A007",
+  "name" : "Samsung S20",
+  "price" : 10000000,
+  "quantity" : 10
+}
+
+### create product 2
+
+POST http://localhost:8080/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : "A002",
+  "name" : "Apple 10",
+  "price" : 15000000,
+  "quantity" : 2
+}
+
+####
+
+GET http://localhost:8080/api/products/A001
+X-Api-Key: SECRET
+Accept: application/json
+
+###
+GET http://localhost:8080/api/products/SALAH
+X-Api-Key: SECRET
+Accept: application/json
+
+### update product
+PUT http://localhost:8080/api/products/A001
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "Macbook M2",
+  "price" : 40000000,
+  "quantity" : 12
+}
+
+### update product not found
+PUT http://localhost:8080/api/products/SALAH
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "Macbook M2",
+  "price" : 40000000,
+  "quantity" : 5
+}
+
+### delete products
+
+DELETE http://localhost:8080/api/products/A001
+Accept: application/json
+
+### list product
+GET http://localhost:8080/api/products
+Accept: application/json
+
+### list product with size parameter
+GET http://localhost:8080/api/products?size=5
+Accept: application/json
+
+### list product with size & page parameters
+GET http://localhost:8080/api/products?size=5&page=-1
+Accept: application/json
